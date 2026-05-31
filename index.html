@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>qt314wink — Creative Technologist Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:#06080f;color:#d4d8e8;font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh;}
+    canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none;}
+    .wrap{position:relative;z-index:10;max-width:1100px;margin:0 auto;padding:0 2rem;}
+    /* HERO */
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;}
+    .hero h1{font-family:'Cinzel',serif;font-size:clamp(2.8rem,9vw,7rem);font-weight:900;letter-spacing:.12em;background:linear-gradient(135deg,#a8c8ff 0%,#e0b8ff 35%,#a8ffd8 65%,#ffd8a8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:hueShift 8s ease-in-out infinite;}
+    @keyframes hueShift{0%,100%{filter:hue-rotate(0deg);}50%{filter:hue-rotate(20deg);}}
+    .hero .tagline{margin-top:1.2rem;font-size:clamp(.9rem,2vw,1.15rem);letter-spacing:.3em;color:#8899bb;text-transform:uppercase;}
+    .hero .desc{max-width:600px;margin:2rem auto 0;font-size:1.05rem;line-height:1.8;color:#99aac4;font-weight:300;}
+    /* SECTIONS */
+    section{padding:5rem 0;}
+    .section-label{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.4em;color:#6677aa;text-transform:uppercase;margin-bottom:2.5rem;}
+    /* CARD GRID */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
+    .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:1.8rem;transition:all .35s ease;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:block;}
+    .card::before{content:'';position:absolute;inset:0;background:var(--glow,rgba(168,200,255,.04));opacity:0;transition:opacity .35s ease;}
+    .card:hover{border-color:rgba(255,255,255,.18);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.4);}
+    .card:hover::before{opacity:1;}
+    .card .tag{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;margin-bottom:.8rem;opacity:.6;}
+    .card h3{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:700;margin-bottom:.6rem;letter-spacing:.05em;}
+    .card p{font-size:.9rem;line-height:1.65;color:#8899bb;font-weight:300;}
+    .card .arrow{position:absolute;bottom:1.5rem;right:1.5rem;font-size:1rem;opacity:.3;transition:opacity .3s,transform .3s;}
+    .card:hover .arrow{opacity:.8;transform:translate(3px,-3px);}
+    /* COLOR ACCENTS */
+    .c-purple{--glow:rgba(200,150,255,.06);}.c-purple h3{color:#c8aaff;}
+    .c-green{--glow:rgba(100,255,180,.05);}.c-green h3{color:#80ffcc;}
+    .c-gold{--glow:rgba(255,210,100,.05);}.c-gold h3{color:#ffd880;}
+    .c-blue{--glow:rgba(120,180,255,.05);}.c-blue h3{color:#88ccff;}
+    .c-pink{--glow:rgba(255,150,200,.05);}.c-pink h3{color:#ffaadd;}
+    .c-teal{--glow:rgba(100,220,220,.05);}.c-teal h3{color:#88eedd;}
+    /* DIVIDER */
+    .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);margin:1rem 0;}
+    /* FOOTER */
+    footer{text-align:center;padding:4rem 2rem;font-size:.8rem;letter-spacing:.2em;color:#445566;border-top:1px solid rgba(255,255,255,.05);}
+    footer a{color:#6677aa;text-decoration:none;margin:0 .75rem;transition:color .2s;}
+    footer a:hover{color:#aabbdd;}
+    @media(max-width:600px){.grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="wrap">
+  <section class="hero">
+    <h1>qt314wink</h1>
+    <p class="tagline">Creative Technologist &middot; Philadelphia</p>
+    <p class="desc">Generative art, interactive experiences, design systems, civic AI, and digital fabrication. Building at the intersection of code, craft, and community.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <p class="section-label">Narrative Immersive Series</p>
+    <div class="grid">
+      <a class="card c-purple" href="https://qt314wink.github.io/neon-gothic-kintsugi/" target="_blank">
+        <div class="tag">WebGL &middot; GSAP &middot; Canvas</div>
+        <h3>Neon Gothic Kintsugi</h3>
+        <p>Dark cathedral aesthetics fused with golden repair. Procedural cracks, neon glow particles, and scroll-driven narrative.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-gold" href="https://qt314wink.github.io/desert-mirage-nomad/" target="_blank">
+        <div class="tag">Canvas &middot; Particles &middot; Audio</div>
+        <h3>Desert Mirage Nomad</h3>
+        <p>Heat shimmer, sand dunes, and nomadic myth. Generative mirage effects with procedural audio chimes.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-pink" href="https://qt314wink.github.io/volcanic-obsidian-ember/" target="_blank">
+        <div class="tag">Canvas &middot; GLSL-inspired &middot; GSAP</div>
+        <h3>Volcanic Obsidian Ember</h3>
+        <p>Lava flows, obsidian fractures, and ember particles. Immersive fire mythology with scroll-triggered reveals.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-blue" href="https://qt314wink.github.io/arctic-frost-shaman/" target="_blank">
+        <div class="tag">Canvas &middot; SVG &middot; WebAudio</div>
+        <h3>Arctic Frost Shaman</h3>
+        <p>Aurora borealis, frost crystal particles, and ice-crack kintsugi. Click to chime, move to frost.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-green" href="https://qt314wink.github.io/solar-cyberpunk-botanist/" target="_blank">
+        <div class="tag">Canvas &middot; Orbitron &middot; Glitch</div>
+        <h3>Solar Cyberpunk Botanist</h3>
+        <p>Circuit-grid vines, glitch typography, and generative flowers that bloom on click. Biopunk mythology meets solar repair.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-teal" href="https://qt314wink.github.io/luminous-lunarpunk/" target="_blank">
+        <div class="tag">Mosaic &middot; Kintsugi SVG &middot; Botanical</div>
+        <h3>Luminous Lunarpunk</h3>
+        <p>Stained glass mosaics, golden kintsugi cracks, and botanical overgrowth. Reassemble the shattered goddess fragment by fragment.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <p class="section-label">Design Systems &amp; Tools</p>
+    <div class="grid">
+      <a class="card c-purple" href="https://github.com/qt314wink/shader-gallery" target="_blank">
+        <div class="tag">GLSL &middot; WebGL &middot; Fragment Shaders</div>
+        <h3>Shader Gallery</h3>
+        <p>Interactive GLSL fragment shader collection — aurora, stained glass, psychedelic fluid &amp; more. Live WebGL art.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-gold" href="https://github.com/qt314wink/comic-pop-system" target="_blank">
+        <div class="tag">CSS Tokens &middot; Components &middot; Halftone</div>
+        <h3>Comic Pop System</h3>
+        <p>Comic book &amp; pop art UI design system with halftone patterns, speech bubbles, panel cards, and bold sticker components.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-teal" href="https://github.com/qt314wink/tactile-textile-system" target="_blank">
+        <div class="tag">CSS &middot; Beaded &middot; Material</div>
+        <h3>Tactile Textile System</h3>
+        <p>Beaded, quilted &amp; material-maximalist UI aesthetic system. CSS tokens, component specs, and generative patterns.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-green" href="https://github.com/qt314wink/mandala-laser-system" target="_blank">
+        <div class="tag">SVG &middot; Parametric &middot; CNC</div>
+        <h3>Mandala Laser System</h3>
+        <p>Parametric SVG mandala generator for laser cutting. Live browser configurator with exportable SVG patterns and fabrication settings.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-blue" href="https://github.com/qt314wink/neumorphism-soft-ui-design-system" target="_blank">
+        <div class="tag">Jewelmorphism &middot; Physics &middot; Animation</div>
+        <h3>Jewelmorphism UI</h3>
+        <p>Neumorphism evolved into jewelmorphism and physics-based elemental animations. Tactile, gemstone-inspired component system.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-pink" href="https://github.com/qt314wink/woodmorphism" target="_blank">
+        <div class="tag">Morphic &middot; Organic &middot; CSS</div>
+        <h3>Woodmorphism</h3>
+        <p>Wood-grain morphic design system. Organic textures, warm tones, and nature-inspired component patterns.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <p class="section-label">Creative &amp; Civic Projects</p>
+    <div class="grid">
+      <a class="card c-green" href="https://github.com/qt314wink/philly-civic-ai" target="_blank">
+        <div class="tag">AI &middot; Philadelphia &middot; Regenerative</div>
+        <h3>Philly Civic AI</h3>
+        <p>Multi-persona AI system for Philadelphia city planning, regenerative design &amp; community development — Germantown, South Philly, CREJ, and beyond.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-gold" href="https://github.com/qt314wink/adriens-farm" target="_blank">
+        <div class="tag">Storybook &middot; AI Illustration &middot; Children</div>
+        <h3>Adrien's Farm</h3>
+        <p>AI-illustrated children's storybook about regenerative growing, wonder, and the living world.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-purple" href="https://github.com/qt314wink/beats-and-boxes" target="_blank">
+        <div class="tag">Music &middot; Community &middot; EDM</div>
+        <h3>Beats &amp; Boxes</h3>
+        <p>A Philadelphia community music initiative blending EDM culture, regenerative systems, and local creative infrastructure.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-teal" href="https://github.com/qt314wink/melodyfire" target="_blank">
+        <div class="tag">React &middot; Supabase &middot; Portfolio</div>
+        <h3>Melodyfire</h3>
+        <p>Unified creative portfolio. AI art, civic design, generative tools, children's illustration, WebGL shaders — React + Supabase + Mandala engine.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-blue" href="https://github.com/qt314wink/moonwell-curriculum" target="_blank">
+        <div class="tag">CBT &middot; Gene Keys &middot; Somatic</div>
+        <h3>Moonwell Curriculum</h3>
+        <p>Behavioral transformation system in eight modules — CBT, Gene Keys, Jungian shadow work, Stoic ethics, DBT, IFS, Polyvagal Theory &amp; somatic practice.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+      <a class="card c-pink" href="https://github.com/qt314wink/chromaflora-sitezip" target="_blank">
+        <div class="tag">Interactive &middot; Mandala &middot; Responsive</div>
+        <h3>Chromaflora</h3>
+        <p>Interactive responsive animations with chromatic mandala designs. A living design system rooted in botanical geometry.</p>
+        <span class="arrow">&nearr;</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <a href="https://github.com/qt314wink" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/wildfire-melody" target="_blank">LinkedIn</a>
+    <a href="https://gumroad.com" target="_blank">Gumroad</a>
+    <br><br>
+    &copy; 2026 qt314wink &mdash; Philadelphia, PA
+  </footer>
+</div>
+<script>
+  const canvas=document.getElementById('bg'),ctx=canvas.getContext('2d');let W,H;
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}resize();window.addEventListener('resize',resize);
+  const stars=[];for(let i=0;i<200;i++)stars.push({x:Math.random(),y:Math.random(),r:.5+Math.random()*1.5,alpha:.2+Math.random()*.6,speed:.0001+Math.random()*.0003,phase:Math.random()*Math.PI*2});
+  const nebulas=[{x:.2,y:.3,rx:.4,ry:.25,hue:240},{x:.8,y:.7,rx:.35,ry:.3,hue:280},{x:.5,y:.5,rx:.5,ry:.4,hue:200}];
+  let t=0;
+  function draw(){
+    ctx.fillStyle='#06080f';ctx.fillRect(0,0,W,H);
+    nebulas.forEach(n=>{const gx=n.x*W,gy=n.y*H,rx=n.rx*W,ry=n.ry*H;const g=ctx.createRadialGradient(gx,gy,0,gx,gy,Math.max(rx,ry));g.addColorStop(0,`hsla(${n.hue},40%,15%,.18)`);g.addColorStop(1,'transparent');ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(gx,gy,rx,ry,0,0,Math.PI*2);ctx.fill();});
+    stars.forEach(s=>{const a=s.alpha*(.6+Math.sin(t*s.speed*100+s.phase)*.4);ctx.fillStyle=`rgba(200,210,255,${a})`;ctx.beginPath();ctx.arc(s.x*W,s.y*H,s.r,0,Math.PI*2);ctx.fill();});
+    t++;requestAnimationFrame(draw);
+  }draw();
+</script>
+</body>
+</html>
